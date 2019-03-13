@@ -16,3 +16,6 @@ Route::get('/', 'SiteRootController@index');
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//Route::Resource('air-table','AirTableController');
+Route::get('register/{user}', 'AirTableController@create');
+Route::post('register/{user}', 'AirTableController@store')->name('register');
