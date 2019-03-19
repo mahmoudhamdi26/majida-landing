@@ -27,6 +27,7 @@ class AirTableController extends Controller
         if (!in_array($user, ['employee', 'employer', 'donor', 'training-provider', 'institution'])) {
             abort(404);
         }
+
         return view('site.register')->with('user', $user);
     }
 
