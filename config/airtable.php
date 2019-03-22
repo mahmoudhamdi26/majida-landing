@@ -44,7 +44,21 @@ return [
         'default' => [
             'name' => env('AIRTABLE_TABLE'),
         ],
-
+        'donors' => [
+            'name' => 'donors',
+        ],
+        'employee' => [
+            'name' => 'employee',
+        ],
+        'employer' => [
+            'name' => 'employer',
+        ],
+        'jobs' => [
+            'name' => 'jobs',
+        ],
+        'trainers' => [
+            'name' => 'trainers',
+        ],
     ],
 
 ];
