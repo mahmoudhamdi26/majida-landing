@@ -40,14 +40,6 @@ class AirTableController extends Controller
      */
     public function store(Request $request, $user)
     {
-        $this->validate($request, [
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'phone' => 'required|numeric|min:9',
-            'country' => 'required|string',
-            'address' => 'required|string',
-            'notes' => 'nullable|string',
-        ]);
         if (!in_array($user, ['employee', 'employer', 'donor', 'training-provider', 'institution', 'job'])) {
             abort(404);
         }
@@ -55,6 +47,15 @@ class AirTableController extends Controller
 //        $fields['type'] = $user;
         $fields = $request->all();
         if($user == 'donor'){
+            $this->validate($request, [
+                'name' => 'required|string',
+                'email' => 'required|email',
+                'phone' => 'required|numeric|min:9',
+                'job' => 'required|string',
+                'contact' => 'required|string',
+                'about' => 'nullable|string',
+            ]);
+
             $response = AirtableFacade::table('donors')->create(['fields' => $fields]);
         }
 
