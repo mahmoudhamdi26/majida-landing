@@ -84,7 +84,7 @@ class AirTableController extends Controller
             ]);
 
             $fields = $request->only(['name', 'email', 'type', 'gov', 'education', 'job']);
-            $fields['birth_date'] = $request->get('bd_day')."-".$request->get('bd_month')."-".$request->get('bd_year');
+            $fields['birth_date'] = $request->get('bd_day')."/".$request->get('bd_month')."/".$request->get('bd_year');
 //            dd($fields);
             $response = AirtableFacade::table('employee')->create(['fields' => $fields]);
         }
