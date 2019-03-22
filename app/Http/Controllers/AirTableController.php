@@ -51,9 +51,13 @@ class AirTableController extends Controller
         if (!in_array($user, ['employee', 'employer', 'donor', 'training-provider', 'institution', 'job'])) {
             abort(404);
         }
-        $fields = $request->only(['name', 'email', 'phone', 'country', 'address', 'notes']);
-        $fields['type'] = $user;
-        $response = AirtableFacade::table('default')->create(['fields' => $fields]);
+//        $fields = $request->only(['name', 'email', 'phone', 'country', 'address', 'notes']);
+//        $fields['type'] = $user;
+        $fields = $request->all();
+        if($user == 'donor'){
+            $response = AirtableFacade::table('donors')->create(['fields' => $fields]);
+        }
+
         if ($response->has('createdTime')) {
             return view('site.success');
         }
