@@ -4,7 +4,8 @@
 
     <div class="container">
         <h2>تسجيل دخول جهات التدريب</h2>
-        <form>
+        <form action="{{ route('register',$user) }}" method="post">
+            @csrf
             <div class="form-group">
                 <input name="center" class="form-control" type="text" placeholder="إسم مركز التدريب" required>
             </div> <!-- end form-group -->
