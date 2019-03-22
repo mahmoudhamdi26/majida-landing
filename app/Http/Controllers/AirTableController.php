@@ -45,7 +45,6 @@ class AirTableController extends Controller
         }
 //        $fields = $request->only(['name', 'email', 'phone', 'country', 'address', 'notes']);
 //        $fields['type'] = $user;
-        $fields = $request->all();
         if($user == 'donor'){
             $this->validate($request, [
                 'name' => 'required|string',
@@ -56,6 +55,7 @@ class AirTableController extends Controller
                 'about' => 'nullable|string',
             ]);
 
+            $fields = $request->only(['name', 'email', 'phone', 'job', 'contact', 'about']);
             $response = AirtableFacade::table('donors')->create(['fields' => $fields]);
         }
 
