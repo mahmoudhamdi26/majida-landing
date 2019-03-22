@@ -1,0 +1,90 @@
+@media(max-width:1199px){
+  
+}
+@media(max-width:991px){
+    .home,
+    .forms{
+        height: auto;
+        overflow: hidden;
+    }
+    .home .content > p {
+        font-size: 2rem;
+        margin-top: 3rem
+    }
+    .home .content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 5rem;
+    }
+    .home .box.box4:after{
+        content: none
+    }
+    .home .box:after{
+        z-index: 2;
+        top:100%;
+        left: 25%;
+        width: 50%;
+        height: 1px;
+    }
+    .home .box.box1:before,
+    .home .box.box3:before{
+        content: "";
+        position: absolute;
+        top:25%;
+        left: 0;
+        height: 50%;
+        width: 1px;
+        background-color: #707070
+    }
+    .add-job a{
+        transform: scale(0.75)
+    }
+}
+@media(max-width:767px){
+    .add-job{
+        position: static;
+        margin-top: 2rem
+    }
+    .home .box:before{
+        content: none !important
+    }
+    nav .brand{
+        width: 100px;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    nav .sponsor .sponsor-logo img{
+        width: 100px;
+    }
+    nav .sponsor .sponsor-by p{
+        font-size: 1rem
+    }
+    nav .sponsor {
+        margin-top: 1rem;
+    }
+    .home .box{
+        width: 95%;
+        margin: auto;
+    }
+    .home .box:after{
+        z-index: 2;
+        top:100%;
+        left: 25%;
+        width: 50%;
+        height: 1px;
+    }
+    .forms form{
+        padding:  6rem
+    }
+    .forms h2{
+        font-size: 3.5rem
+    }
+    
+}
+@media(max-width:575px){
+    .forms h2{
+        font-size: 2.5rem
+    }
+    .forms form {
+        padding: 3rem;
+    }
+}

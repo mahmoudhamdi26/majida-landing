@@ -1,0 +1,443 @@
+/*Table Content
+==========================
+    # General
+        - Fonts
+    # Links
+    # Headings
+    # Lists
+        - Social-List
+        - Contact-List
+    # Images
+*/
+
+
+/* General
+======================= */
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Cairo|Lalezar');
+*,*:focus,*:hover{
+    outline: 0 !important
+}
+html{
+    font-size: 0.625rem
+}
+body{
+    font-size: 15px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Links
+==========================*/
+a{
+    
+}
+a, a:hover, a:focus{
+    text-decoration: none;
+}
+/* Headings 
+========================== */
+h1, h2, h3, h4, h5, h6 {
+    display: block;
+    margin: 0;
+}
+p{
+    margin: 0;
+}
+/*Lists
+==========================*/
+ul {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Images
+=========================== */
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/* Section Setting
+============================ */ 
+.section-lg{
+    padding: 50px 0;
+}
+/* nav
+========================*/
+nav{
+    background-color: #fff;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+    z-index: 99
+}
+nav .brand{
+    width: 200px;
+    margin-right: 25px;
+}
+nav .sponsor{
+    margin-top: 1.5rem
+}
+nav .sponsor .sponsor-by{
+    display:inline-block
+}
+nav .sponsor .sponsor-by p{
+    color: #00487C;
+    font-size: 1.8rem;
+    margin-left: 10px;
+    font-weight: bold;
+    padding: 10px;
+    border-left: 1px solid #00487C
+}
+nav .sponsor .sponsors-logo{
+    display:inline-block;
+    vertical-align: middle
+}
+nav .sponsor .sponsors-logo img{
+    width: 80%
+}
+
+/* home
+===================*/
+.add-job{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.add-job a{
+    width: 227px;
+    height: 87px;
+    background-color: #FFF;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 15px 20px 0 rgba(0,0,0,0.1);
+    transition:all .3s cubic-bezier(.53,-.01,0,1.49); 
+
+}
+.add-job a:hover{
+    
+    box-shadow: 0 15px 20px 0 rgba(0,0,0,0)
+}
+.add-job a img{
+    margin-left: 1.5rem
+}
+.home{
+    min-height: calc(100vh - 78px);
+    height: 700px;
+    background: linear-gradient(90deg,rgba(0, 78, 255, 0.75),rgba(43, 255, 172, 0.75)),url(../images/bg.png);
+    background-size: cover;
+    background-position: bottom;
+    position: relative
+}
+.home .content{
+    text-align: center;
+    color: #FFF;
+    padding: 5rem 0
+}
+.home .content h1{
+    font-family: 'Lalezar', cursive;
+    font-size: 5.5rem;
+    margin-bottom: 7rem
+}
+.home .content > p {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-top: 6rem
+}
+.home .box{
+    height: 28rem;
+    background: #FFF;
+    color: #000;
+    position: relative;
+    transition:all .3s cubic-bezier(.53,-.01,0,1.49); 
+}
+.home .box:after{
+    content: "";
+    position: absolute;
+    top:25%;
+    left: 0;
+    height: 50%;
+    width: 1px;
+    background-color: #707070
+}
+.home .box.box4:after{
+    content: none
+}
+.home .box p{
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+.home .box .box-content a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transition:all .3s cubic-bezier(.53,-.01,0,1.49); 
+}
+.home .box .box-content img{
+    filter: grayscale(100%);
+    transition:all .3s cubic-bezier(.53,-.01,0,1.49); 
+}
+.img-container{
+    height: 70px;
+    overflow: hidden;
+    margin-bottom: 1.6rem
+}
+.home .box .box-content img.last{
+    filter: grayscale(0%);
+}
+/*.home .box.active,*/
+.home .box:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.1);
+    z-index: 5;
+} 
+/*.home .box.active .box-content img.first,*/
+.home .box:hover .box-content img.first{
+    transform: translateY(-100%)
+}
+/*.home .box.active .box-content img.last,*/
+.home .box:hover .box-content img.last{
+    transform: translateY(-142%)
+}
+/*.home .box.active:after,*/
+.home .box:hover:after,
+.home .box:hover:before{
+    content: none !important
+}
+/* forms
+========================= */
+.forms{
+    background-color: #EEF2F7;
+    background-image: url(../images/bg-forms.png);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    min-height: calc(100vh - 78px);
+    padding-top: 5rem
+}
+
+.forms h2{
+    text-align: center;
+    color: #00487C;
+    font-weight: bold;
+    font-size: 4.5rem;
+    padding-bottom: 4rem;
+}
+.forms form{
+    background-color: #FFF;
+    box-shadow:  0 0 50px 0 rgba(0,0,0,0.05);
+    padding: 10rem 9rem;
+    width: 100%;
+    max-width: 850px;
+    margin: 2rem auto;
+}
+.type-2{
+    width: 100%;
+    max-width: 850px;
+    margin: 2rem auto;
+    display: block;
+    padding: 1rem;
+    border: none;
+    background-color:#00487C ;
+    color: #FFF;
+    cursor: pointer
+}
+.form-group{
+    margin-bottom: 2.5rem
+}
+.form-group .form-control{
+    border-radius: 30px;
+    border:1px solid #666666;
+    font-size: 1.6rem;
+    padding: 1.4rem 1.8rem;
+    
+}
+.form-group .form-control:focus{
+    box-shadow: none;
+    border-color: #00487C;
+    color: #00487C;
+}
+.custom-la{
+    color: #979797;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem
+}
+select.form-control:not([size]):not([multiple]){
+    height: auto
+}
+.custom-btn,
+.swal-button--confirm{
+    cursor: pointer;
+    border:none;
+    padding: 1.8rem 7rem;
+    border-radius: 35px;
+    color: #FFF;
+    font-size: 1.6rem;
+    font-weight: bold;
+    background: linear-gradient(90deg,rgba(0, 78, 255, 0.75),rgba(43, 255, 172, 0.75));
+/*    transition:all .3s ease-in-out; */
+}
+.swal-button--confirm{
+    padding: 1.2rem 4rem;
+}
+.swal-button:focus{
+    box-shadow: none
+}
+.custom-btn:hover,
+.swal-button--confirm:hover{
+    background:#00487C !important
+}
+.forms .custom-btn{
+    margin-top: 4rem;
+    
+}
+/* placholder
+====================*/
+::-webkit-input-placeholder {
+  color: #666666 !important;
+}
+:-ms-input-placeholder {
+  color: #666666 !important;
+}
+::-ms-input-placeholder {
+  color: #666666 !important;
+}
+::placeholder {
+  color: #666666 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dropdown-el {
+    min-width: 100%;
+    position: relative;
+    display: inline-block;
+    min-height: 53px;
+    max-height: 53px;
+    overflow: hidden;
+    top: .5em;
+    cursor: pointer;
+    text-align: right;
+    white-space: nowrap;
+    color: #444;
+    border: 1px solid #666666;
+    border-radius: 25px;
+    background-color: #ffffff;
+    transition: 0.3s all ease-in-out;
+}
+.dropdown-el input {
+  display: none;
+}
+.dropdown-el label {
+  border-top: 1px solid #6666;
+  display: block;
+  height: 53px;
+  line-height: 53px;
+  padding-left: 1em;
+  padding-right: 3em;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s color ease-in-out;
+}
+.dropdown-el label:nth-child(2) {
+  margin-top: 52px;
+  border-top: 1px solid #666;
+}
+.dropdown-el input:checked + label {
+  display: block;
+  border-top: none;
+  position: absolute;
+  top: 0;
+}
+.dropdown-el input:checked + label:nth-child(2) {
+  margin-top: 0;
+  position: relative;
+}
+.dropdown-el::after {
+    content: "";
+    position: absolute;
+    left: 1.8em;
+    top: 1.5em;
+    border: 0.3em solid #666;
+    border-color: #666 transparent transparent transparent;
+    transition: .4s all ease-in-out;
+}
+.dropdown-el.expanded {
+  border-top: 1px solid #666;
+  background: #fff;
+  border-radius: 25px;
+  padding: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0px;
+  max-height: 50em;
+}
+.dropdown-el.expanded label {
+  border-top: .06em solid #666;
+}
+.dropdown-el.expanded label:hover {
+    background: #F1FBFF;
+}
+.dropdown-el.expanded::after {
+  transform: rotate(-180deg);
+  top: 1.5em;
+}
+.custom-control{
+    border: 1px solid #666;
+    padding: 1rem 3.5rem;
+    width: 100%;
+    border-radius: 35px;
+}
+.custom-control-label::before {
+    top: 15px;
+    right: 13px;
+    width: 13px;
+    height: 13px;
+}
+.custom-control-label{
+    cursor: pointer
+}
+.custom-control-label::after {
+    top: 14px;
+    right: 11px;
+    width: 18px;
+    height: 14px;
+}
+.custom-control .custom-control-input:checked~.custom-control-label::before {
+    background-color: #00487C;
+}
+.custom-control .custom-control-input:checked~.custom-control-label{
+    color: #00487C
+}
+
+.custom-control .custom-control-input:checked{
+    border-color: #00487C
+}

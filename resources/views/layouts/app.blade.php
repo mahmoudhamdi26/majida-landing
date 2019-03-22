@@ -1,80 +1,76 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="ar" dir="rtl">
 <head>
+    <!-- Meta Tags
+    ========================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content=" ">
+    <meta name="author" content="Feidi">
+    <meta name="contact" content="info@example.com">
+    <meta name="contactNetworkAddress" CONTENT="abdo23970@gmail.com">
+    <meta name="contactPhoneNumber" CONTENT="01092144285">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Site Title
+    ========================== -->
+    <title>ماچدة</title>
 
-    <title>{{ config('app.name', 'majidah') }}</title>
+    <!-- Favicon
+    ===========================-->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images') }}/fav.ico">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- Base & front-files
+    ========================== -->
+    <link rel="stylesheet" href="{{ asset('front-files') }}/bootstrap/css/bootstrap-ar.css">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <!-- Site Style
+    ========================== -->
+    <link rel="stylesheet" href="{{ asset('css') }}/style.css">
+    <link rel="stylesheet" href="{{ asset('css') }}/media.css">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand " href="{{ url('/') }}">
-                    {{ config('app.name', 'majidah') }}
+
+<nav>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between">
+            <div class="brand my-2">
+                <a href="{{ url('/') }}">
+                    <img src="{{ asset('images') }}/Logo.png" alt="ماچدة" draggable="false">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                       {{-- @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest--}}
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+            </div> <!-- end brand -->
+            <div class="sponsor">
+                <div class="sponsor-by">
+                    <p>ممول من</p>
+                </div> <!-- end sponsor-by -->
+                <div class="sponsors-logo">
+                    <a href="#">
+                        <img src="{{ asset('images') }}/sponsor.png" alt="sponsor" draggable="false">
+                    </a>
+                </div> <!-- end sponsor-logo -->
+            </div> <!-- end sponsor -->
+        </div> <!-- end d-flex -->
     </div>
+</nav>
+
+<section class="forms d-flex justify-content-center align-items-center flex-column">
+
+    @yield('content')
+
+</section> <!-- end home -->
+<!--Script files
+========================== -->
+<script src="{{ asset('front-files') }}/jquery/jquery.js"></script>
+<script src="{{ asset('front-files') }}/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script src="{{ asset('js') }}/main.js"></script>
+
 </body>
 </html>

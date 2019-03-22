@@ -1,108 +1,139 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- Meta Tags
+    ========================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content=" ">
+    <meta name="author" content="Feidi">
+    <meta name="contact" content="info@example.com">
+    <meta name="contactNetworkAddress" CONTENT="abdo23970@gmail.com">
+    <meta name="contactPhoneNumber" CONTENT="01092144285">
 
-        <title>Majidah</title>
+    <!-- Site Title
+    ========================== -->
+    <title>ماچدة</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <!-- Favicon
+    ===========================-->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images') }}/fav.ico">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Base & front-files
+    ========================== -->
+    <link rel="stylesheet" href="{{ asset('front-files') }}/bootstrap/css/bootstrap-ar.css">
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- Site Style
+    ========================== -->
+    <link rel="stylesheet" href="{{ asset('css') }}/style.css">
+    <link rel="stylesheet" href="{{ asset('css') }}/media.css">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
 
-            .position-ref {
-                position: relative;
-            }
+<nav>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between">
+            <div class="brand my-2">
+                <a href="#">
+                    <img src="{{ asset('images') }}/Logo.png" alt="ماچدة" draggable="false">
+                </a>
+            </div> <!-- end brand -->
+            <div class="sponsor">
+                <div class="sponsor-by">
+                    <p>ممول من</p>
+                </div> <!-- end sponsor-by -->
+                <div class="sponsors-logo">
+                    <a href="#">
+                        <img src="{{ asset('images') }}/sponsor.png" alt="sponsor" draggable="false">
+                    </a>
+                </div> <!-- end sponsor-logo -->
+            </div> <!-- end sponsor -->
+        </div> <!-- end d-flex -->
+    </div>
+</nav>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+<section class="home d-flex justify-content-center align-items-center flex-column">
+    <div class="add-job">
+        <a href="{{route('register','job')}}" class="d-flex justify-content-center align-items-center">
+            <img src="{{ asset('images') }}/job.png" alt="icon" draggable="false">
+            إضافة وظيفة
+        </a>
+    </div> <!-- end add-job -->
+    <div class="container">
+        <div class="content">
+            <h1>سجل الآن</h1>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 px-0">
+                    <div class="box box1 d-flex justify-content-center align-items-center">
+                        <div class="box-content">
+                            <!-- here i a link to for this box -->
+                            <a href="{{ route('register','training-provider')}}"></a>
+                            <div class="img-container">
+                                <img src="{{ asset('images') }}/icon1.png" alt="icon" draggable="false" class="first mb-5 d-block mx-auto">
+                                <img src="{{ asset('images') }}/icon1.png" alt="icon" draggable="false" class="last mb-5 d-block mx-auto">
+                            </div>
+                            <p>جهات التدريب</p>
+                        </div> <!-- end box-content -->
+                    </div> <!-- end box -->
+                </div> <!-- end col -->
+                <div class="col-lg-3 col-md-6 px-0">
+                    <div class="box box2 d-flex justify-content-center align-items-center active">
+                        <div class="box-content">
+                            <!-- here i a link to for this box -->
+                            <a href="{{route('register','employee')}}"></a>
+                            <div class="img-container">
+                                <img src="{{ asset('images') }}/icon2.png" alt="icon" draggable="false" class="first mb-5 d-block mx-auto">
+                                <img src="{{ asset('images') }}/icon2.png" alt="icon" draggable="false" class="last mb-5 d-block mx-auto">
+                            </div>
+                            <p>طالب العمل</p>
+                        </div> <!-- end box-content -->
+                    </div> <!-- end box -->
+                </div> <!-- end col -->
+                <div class="col-lg-3 col-md-6 px-0">
+                    <div class="box box3 d-flex justify-content-center align-items-center">
+                        <div class="box-content">
+                            <!-- here i a link to for this box -->
+                            <a href="{{route('register','employer')}}"></a>
+                            <div class="img-container">
+                                <img src="{{ asset('images') }}/icon3.png" alt="icon" draggable="false" class="first mb-5 d-block mx-auto">
+                                <img src="{{ asset('images') }}/icon3.png" alt="icon" draggable="false" class="last mb-5 d-block mx-auto">
+                            </div>
+                            <p>صاحب العمل</p>
+                        </div> <!-- end box-content -->
+                    </div> <!-- end box -->
+                </div> <!-- end col -->
+                <div class="col-lg-3 col-md-6 px-0">
+                    <div class="box box4 d-flex justify-content-center align-items-center">
+                        <div class="box-content">
+                            <!-- here i a link to for this box -->
+                            <a href="{{route('register','donor')}}"></a>
+                            <div class="img-container">
+                                <img src="{{ asset('images') }}/icon4.png" alt="icon" draggable="false" class="first mb-5 d-block mx-auto">
+                                <img src="{{ asset('images') }}/icon4.png" alt="icon" draggable="false" class="last mb-5 d-block mx-auto">
+                            </div>
+                            <p>الجهات المانحة</p>
+                        </div> <!-- end box-content -->
+                    </div> <!-- end box -->
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+            <p>أول منصة لتوصيل ذوي الإعاقة بفرص تدريب وتوظيف تناسب قدراتهم</p>
+        </div> <!-- end content -->
+    </div> <!-- end container -->
+</section> <!-- end home -->
+<!--Script files
+========================== -->
+<script src="{{ asset('front-files') }}/jquery/jquery.js"></script>
+<script src="{{ asset('front-files') }}/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-            .content {
-                text-align: center;
-            }
+<script src="{{ asset('js') }}/main.js"></script>
 
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-
-            .register-title{
-                font-size: 30px;
-                text-decoration: underline;
-                margin-bottom: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Majidah<br>
-                    Coming Soon
-                </div>
-
-                <div class="register-title">
-                    Register As
-                </div>
-
-                <div class="links">
-                    <a href="{{route('register','employee')}}">Employee</a>
-                    <a href="{{route('register','employer')}}">Employer</a>
-                    <a href="{{route('register','institution')}}">Institution</a>
-                    <a href="{{route('register','donor')}}">Donor</a>
-                    <a href="{{route('register','training-provider')}}">Training Provider</a>
-                </div>
-            </div>
-        </div>
-    </body>
+</body>
 </html>

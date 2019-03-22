@@ -24,11 +24,12 @@ class AirTableController extends Controller
      */
     public function create($user)
     {
-        if (!in_array($user, ['employee', 'employer', 'donor', 'training-provider', 'institution'])) {
+        if (!in_array($user, ['employee', 'employer', 'donor', 'training-provider', 'institution', 'job'])) {
             abort(404);
         }
 
-        return view('site.register')->with('user', $user);
+//        return view('site.register')->with('user', $user);
+        return view('airtable.'.$user)->with('user', $user);
     }
 
     /**
@@ -47,7 +48,7 @@ class AirTableController extends Controller
             'address' => 'required|string',
             'notes' => 'nullable|string',
         ]);
-        if (!in_array($user, ['employee', 'employer', 'donor', 'training-provider', 'institution'])) {
+        if (!in_array($user, ['employee', 'employer', 'donor', 'training-provider', 'institution', 'job'])) {
             abort(404);
         }
         $fields = $request->only(['name', 'email', 'phone', 'country', 'address', 'notes']);
