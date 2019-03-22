@@ -5,6 +5,8 @@
     <div class="container">
         <h2>تسجيل دخول الجهات المانحة</h2>
         <form action="{{ route('register',$user) }}" method="post">
+            @csrf
+
             <div class="form-group">
                 <input class="form-control" name="name" type="text" placeholder="إسم المنظمة" required>
             </div> <!-- end form-group -->
