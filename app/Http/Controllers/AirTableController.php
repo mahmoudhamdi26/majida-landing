@@ -87,6 +87,23 @@ class AirTableController extends Controller
             $fields['birth_date'] = $request->get('bd_day')."/".$request->get('bd_month')."/".$request->get('bd_year');
 //            dd($fields);
             $response = AirtableFacade::table('employee')->create(['fields' => $fields]);
+        }elseif($user == 'training-provider'){
+            $this->validate($request, [
+                'center' => 'required|string',
+                'about' => 'required|string',
+                'responsible' => 'required|string',
+                'job' => 'required|string',
+                'email' => 'required|email',
+                'phone' => 'required|string',
+                'type' => 'required|string',
+                'provided_training' => 'required|string',
+                'location' => 'required|string',
+                'available_trainings' => 'required|string',
+            ]);
+
+            $fields = $request->only(['center', 'about', 'responsible', 'job', 'email', 'phone',
+                'type', 'provided_training', 'location', 'available_trainings']);
+            $response = AirtableFacade::table('trainers')->create(['fields' => $fields]);
         }
 
         if ($response->has('createdTime')) {
