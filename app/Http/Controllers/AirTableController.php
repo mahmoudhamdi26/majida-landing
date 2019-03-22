@@ -14,7 +14,7 @@ class AirTableController extends Controller
      */
     public function index()
     {
-        return \Airtable::table('default')->create(['fields' => ['name' => 'ddddddd']]);
+//        return \Airtable::table('default')->create(['fields' => ['name' => 'ddddddd']]);
     }
 
     /**
@@ -29,7 +29,7 @@ class AirTableController extends Controller
         }
 
 //        return view('site.register')->with('user', $user);
-        return view('airtable.'.$user)->with('user', $user);
+        return view('airtable.' . $user)->with('user', $user);
     }
 
     /**
@@ -45,7 +45,7 @@ class AirTableController extends Controller
         }
 //        $fields = $request->only(['name', 'email', 'phone', 'country', 'address', 'notes']);
 //        $fields['type'] = $user;
-        if($user == 'donor'){
+        if ($user == 'donor') {
             $this->validate($request, [
                 'name' => 'required|string',
                 'email' => 'required|email',
@@ -57,7 +57,7 @@ class AirTableController extends Controller
 
             $fields = $request->only(['name', 'email', 'phone', 'job', 'contact', 'about']);
             $response = AirtableFacade::table('donors')->create(['fields' => $fields]);
-        }elseif($user == 'employer'){
+        } elseif ($user == 'employer') {
             $this->validate($request, [
                 'owner' => 'required|string',
                 'email' => 'required|email',
@@ -70,7 +70,7 @@ class AirTableController extends Controller
 
             $fields = $request->only(['owner', 'email', 'phone', 'company', 'field', 'address', 'responsible']);
             $response = AirtableFacade::table('employer')->create(['fields' => $fields]);
-        }elseif($user == 'employee'){
+        } elseif ($user == 'employee') {
             $this->validate($request, [
                 'name' => 'required|string',
                 'email' => 'required|email',
@@ -84,10 +84,10 @@ class AirTableController extends Controller
             ]);
 
             $fields = $request->only(['name', 'email', 'type', 'gov', 'education', 'job']);
-            $fields['birth_date'] = $request->get('bd_day')."/".$request->get('bd_month')."/".$request->get('bd_year');
+            $fields['birth_date'] = $request->get('bd_day') . "/" . $request->get('bd_month') . "/" . $request->get('bd_year');
 //            dd($fields);
             $response = AirtableFacade::table('employee')->create(['fields' => $fields]);
-        }elseif($user == 'training-provider'){
+        } elseif ($user == 'training-provider') {
             $this->validate($request, [
                 'center' => 'required|string',
                 'about' => 'required|string',
@@ -101,10 +101,43 @@ class AirTableController extends Controller
                 'available_trainings' => 'required|string',
             ]);
 
-            $fields = $request->only(['center', 'about', 'responsible', 'job', 'email', 'phone',
-                'type', 'provided_training', 'location', 'available_trainings']);
+            $fields = $request->only([
+                'center',
+                'about',
+                'responsible',
+                'job',
+                'email',
+                'phone',
+                'type',
+                'provided_training',
+                'location',
+                'available_trainings'
+            ]);
             $response = AirtableFacade::table('trainers')->create(['fields' => $fields]);
+        } elseif ($user == 'job') {
+//            dd(111);
+            $this->validate($request, [
+                'job_title' => 'required|string',
+                'location' => 'required|string',
+                'gender' => 'required|in:male,female',
+                'opportunity_count' => 'required|integer|min:1',
+                'transport' => 'nullable|in:transport',
+                'building' => 'nullable|in:building',
+                'description' => 'required|string',
+            ]);
+
+            $fields = $request->only([
+                'job_title',
+                'location',
+                'description',
+                'gender',
+                'opportunity_count',
+                'transport',
+                'building',
+            ]);
+            $response = AirtableFacade::table('jobs')->create(['fields' => $fields]);
         }
+
 
         if ($response->has('createdTime')) {
             return view('site.success');
