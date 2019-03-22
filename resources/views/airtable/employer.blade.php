@@ -4,27 +4,29 @@
 
     <div class="container">
         <h2>تسجيل دخول صاحب العمل</h2>
-        <form>
+        <form action="{{ route('register',$user) }}" method="post">
+            @csrf
+
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="صاحب العمل" required>
+                <input name="owner" class="form-control" type="text" placeholder="صاحب العمل" required>
             </div> <!-- end form-group -->
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="إسم الشركة" required>
+                <input name="company" class="form-control" type="text" placeholder="إسم الشركة" required>
             </div> <!-- end form-group -->
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="مجال العمل" required>
+                <input name="field" class="form-control" type="text" placeholder="مجال العمل" required>
             </div> <!-- end form-group -->
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="عنوان الشركة" required>
+                <input name="address" class="form-control" type="text" placeholder="عنوان الشركة" required>
             </div> <!-- end form-group -->
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="الشخص المسؤل" required>
+                <input name="responsible" class="form-control" type="text" placeholder="الشخص المسؤل" required>
             </div> <!-- end form-group -->
             <div class="form-group">
-                <input class="form-control" type="number" placeholder="رقم التليفون" required>
+                <input name="phone" class="form-control" type="number" placeholder="رقم التليفون" required>
             </div> <!-- end form-group -->
             <div class="form-group">
-                <input class="form-control" type="email" placeholder="البريد الإلكتروني" required>
+                <input name="email" class="form-control" type="email" placeholder="البريد الإلكتروني" required>
             </div> <!-- end form-group -->
             <div class="text-center">
                 <button class="custom-btn">

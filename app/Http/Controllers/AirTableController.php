@@ -57,6 +57,19 @@ class AirTableController extends Controller
 
             $fields = $request->only(['name', 'email', 'phone', 'job', 'contact', 'about']);
             $response = AirtableFacade::table('donors')->create(['fields' => $fields]);
+        }elseif($user == 'employer'){
+            $this->validate($request, [
+                'owner' => 'required|string',
+                'email' => 'required|email',
+                'phone' => 'required|numeric|min:9',
+                'company' => 'required|string',
+                'field' => 'required|string',
+                'address' => 'required|string',
+                'responsible' => 'required|string',
+            ]);
+
+            $fields = $request->only(['owner', 'email', 'phone', 'company', 'field', 'address', 'responsible']);
+            $response = AirtableFacade::table('employer')->create(['fields' => $fields]);
         }
 
         if ($response->has('createdTime')) {
