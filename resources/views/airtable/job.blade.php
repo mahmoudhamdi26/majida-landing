@@ -6,12 +6,9 @@
         <h2>إضافة وظيفة جديدة</h2>
         <form action="{{route('register',$user)}}" method="post">
             @csrf
-            <div class="form-group">
-                <input name="owner" class="form-control" type="text" placeholder="صاحب العمل" required>
-            </div> <!-- end form-group -->
-            <div class="form-group">
-                <input name="phone" class="form-control" type="number" placeholder="رقم التليفون" required>
-            </div> <!-- end form-group -->
+            {{--<div class="form-group">--}}
+                {{--<input name="owner" class="form-control" type="text" placeholder="صاحب العمل" required>--}}
+            {{--</div> <!-- end form-group -->--}}
             <div class="form-group">
                 <input name="company" class="form-control" type="text" placeholder="إسم الشركة" required>
             </div> <!-- end form-group -->
@@ -19,13 +16,17 @@
                 <input name="field" class="form-control" type="text" placeholder="مجال العمل" required>
             </div> <!-- end form-group -->
             <div class="form-group">
-                <input name="address" class="form-control" type="text" placeholder="عنوان الشركة" required>
+                <input name="phone" class="form-control" type="number" placeholder="رقم التليفون" required>
             </div> <!-- end form-group -->
-
-
             <div class="form-group">
-                <input class="form-control" type="text" name="job_title" placeholder="المسمي الوظيفي" required>
+                <input name="email" class="form-control" type="email" placeholder="البريد الإلكتروني" required>
             </div> <!-- end form-group -->
+            {{--<div class="form-group">--}}
+                {{--<input name="address" class="form-control" type="text" placeholder="عنوان الشركة" required>--}}
+            {{--</div> <!-- end form-group -->--}}
+            {{--<div class="form-group">--}}
+                {{--<input class="form-control" type="text" name="job_title" placeholder="المسمي الوظيفي" required>--}}
+            {{--</div> <!-- end form-group -->--}}
             <div class="form-group">
                 <input class="form-control" type="text" name="website" placeholder=" الموقع اللإلكتروني" required>
             </div> <!-- end form-group -->

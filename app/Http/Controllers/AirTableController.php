@@ -118,13 +118,13 @@ class AirTableController extends Controller
         } elseif ($user == 'job') {
 //            dd(111);
             $this->validate($request, [
-                'owner' => 'required|string',
+//                'owner' => 'required|string',
                 'phone' => 'required|numeric|min:9',
+                'email' => 'required|string',
                 'company' => 'required|string',
                 'field' => 'required|string',
-                'address' => 'required|string',
-
-                'job_title' => 'required|string',
+//                'address' => 'required|string',
+//                'job_title' => 'required|string',
                 'website' => 'required|string',
                 'gender' => 'required|in:male,female',
                 'opportunity_count' => 'required|integer|min:1',
@@ -134,9 +134,9 @@ class AirTableController extends Controller
             ]);
 
             $fields = $request->only([
-                'owner', 'phone', 'company', 'field', 'address',
-
-                'job_title',
+//                'owner', 'address',
+                'phone', 'email', 'company', 'field',
+//                'job_title',
                 'website',
                 'description',
                 'gender',
