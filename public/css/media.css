@@ -35,7 +35,7 @@
     }
     .home .content h1 {
         font-size: 3.5rem;
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
     }
     .home .box.box4:after{
         content: none
@@ -63,9 +63,25 @@
 }
 @media(max-width:767px){
     .add-job{
-        position: static;
-        margin-top: 2rem
+        position: relative;
+        margin-top: 2rem;
+        top: 0;
+        left: -30px;
+        display: flex;
+        justify-content: flex-end;
     }
+    .home .content{
+        display: flex;
+        flex-direction: column;
+    }
+    .home .content .row{
+        order:2
+    }
+    .home .content > p{
+        order: 1;
+        margin: 0 0 3rem;
+    }
+    
     .home .box:before{
         content: none !important
     }
