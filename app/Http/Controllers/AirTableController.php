@@ -59,7 +59,7 @@ class AirTableController extends Controller
             $response = AirtableFacade::table('donors')->create(['fields' => $fields]);
         } elseif ($user == 'employer') {
             $this->validate($request, [
-                'owner' => 'required|string',
+//                'owner' => 'required|string',
                 'email' => 'required|email',
                 'phone' => 'required|numeric|min:9',
                 'company' => 'required|string',

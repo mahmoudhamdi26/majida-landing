@@ -7,9 +7,9 @@
         <form action="{{ route('register',$user) }}" method="post">
             @csrf
 
-            <div class="form-group">
-                <input name="owner" class="form-control" type="text" placeholder="صاحب العمل" required>
-            </div> <!-- end form-group -->
+            {{--<div class="form-group">--}}
+                {{--<input name="owner" class="form-control" type="text" placeholder="صاحب العمل" required>--}}
+            {{--</div> <!-- end form-group -->--}}
             <div class="form-group">
                 <input name="company" class="form-control" type="text" placeholder="إسم الشركة" required>
             </div> <!-- end form-group -->
