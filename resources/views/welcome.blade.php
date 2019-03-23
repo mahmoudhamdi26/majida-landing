@@ -62,7 +62,11 @@
 <section class="home d-flex justify-content-center align-items-center flex-column">
     <div class="add-job">
         <a href="{{route('register','job')}}" class="d-flex justify-content-center align-items-center">
-            <img src="{{ asset('images') }}/job.png" alt="icon" draggable="false">
+            {{--<img src="{{ asset('images') }}/job.png" alt="icon" draggable="false">--}}
+            <div class="job-container">
+                <img src="{{ asset('images') }}/job.png" alt="icon" draggable="false">
+                <img src="{{ asset('images') }}/job.png" alt="icon" draggable="false">
+            </div>
             إضافة وظيفة
         </a>
     </div> <!-- end add-job -->

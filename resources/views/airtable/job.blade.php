@@ -7,10 +7,27 @@
         <form action="{{route('register',$user)}}" method="post">
             @csrf
             <div class="form-group">
+                <input name="owner" class="form-control" type="text" placeholder="صاحب العمل" required>
+            </div> <!-- end form-group -->
+            <div class="form-group">
+                <input name="phone" class="form-control" type="number" placeholder="رقم التليفون" required>
+            </div> <!-- end form-group -->
+            <div class="form-group">
+                <input name="company" class="form-control" type="text" placeholder="إسم الشركة" required>
+            </div> <!-- end form-group -->
+            <div class="form-group">
+                <input name="field" class="form-control" type="text" placeholder="مجال العمل" required>
+            </div> <!-- end form-group -->
+            <div class="form-group">
+                <input name="address" class="form-control" type="text" placeholder="عنوان الشركة" required>
+            </div> <!-- end form-group -->
+
+
+            <div class="form-group">
                 <input class="form-control" type="text" name="job_title" placeholder="المسمي الوظيفي" required>
             </div> <!-- end form-group -->
             <div class="form-group">
-                <input class="form-control" type="text" name="location" placeholder="الموقع" required>
+                <input class="form-control" type="text" name="website" placeholder=" الموقع اللإلكتروني" required>
             </div> <!-- end form-group -->
             <div class="form-group">
                 <textarea class="form-control" placeholder="شرح الوظيفة" rows="4" name="description"

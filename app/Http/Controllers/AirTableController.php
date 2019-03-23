@@ -74,6 +74,7 @@ class AirTableController extends Controller
             $this->validate($request, [
                 'name' => 'required|string',
                 'email' => 'required|email',
+                'phone' => 'required|numeric|min:9',
                 'bd_day' => 'required|numeric',
                 'bd_month' => 'required|numeric',
                 'bd_year' => 'required|numeric',
@@ -83,7 +84,7 @@ class AirTableController extends Controller
                 'job' => 'required|string',
             ]);
 
-            $fields = $request->only(['name', 'email', 'type', 'gov', 'education', 'job']);
+            $fields = $request->only(['name', 'email', 'phone', 'type', 'gov', 'education', 'job']);
             $fields['birth_date'] = $request->get('bd_day') . "/" . $request->get('bd_month') . "/" . $request->get('bd_year');
 //            dd($fields);
             $response = AirtableFacade::table('employee')->create(['fields' => $fields]);
@@ -117,8 +118,14 @@ class AirTableController extends Controller
         } elseif ($user == 'job') {
 //            dd(111);
             $this->validate($request, [
+                'owner' => 'required|string',
+                'phone' => 'required|numeric|min:9',
+                'company' => 'required|string',
+                'field' => 'required|string',
+                'address' => 'required|string',
+
                 'job_title' => 'required|string',
-                'location' => 'required|string',
+                'website' => 'required|string',
                 'gender' => 'required|in:male,female',
                 'opportunity_count' => 'required|integer|min:1',
                 'transport' => 'nullable|in:transport',
@@ -127,8 +134,10 @@ class AirTableController extends Controller
             ]);
 
             $fields = $request->only([
+                'owner', 'phone', 'company', 'field', 'address',
+
                 'job_title',
-                'location',
+                'website',
                 'description',
                 'gender',
                 'opportunity_count',

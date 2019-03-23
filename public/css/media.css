@@ -1,5 +1,27 @@
-@media(max-width:1199px){
-  
+@media(max-width:1500px){
+    .home{
+        height: auto
+    }
+    .home .content{
+        padding: 3rem 0
+    }
+    .add-job a{
+        width: 209px;
+        height: 70px;
+        font-size: 1.3rem;
+    }
+    .home .box {
+        height: 22rem;
+    }
+    
+    .home .content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 5rem;
+    }
+    .home .content > p {
+        font-size: 3rem;
+        margin-top: 3rem
+    }
 }
 @media(max-width:991px){
     .home,
@@ -48,12 +70,12 @@
         content: none !important
     }
     nav .brand{
-        width: 100px;
+        width: 90px;
         margin-top: 1rem !important;
         margin-bottom: 1rem !important;
     }
-    nav .sponsor .sponsor-logo img{
-        width: 100px;
+    nav .sponsor .sponsors-logo img{
+        width: 90px;
     }
     nav .sponsor .sponsor-by p{
         font-size: 1rem

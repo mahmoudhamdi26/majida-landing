@@ -13,6 +13,9 @@
             <div class="form-group">
                 <input name="email" class="form-control" type="email" placeholder="البريد الإلكتروني" required>
             </div> <!-- end form-group -->
+            <div class="form-group">
+                <input name="phone" class="form-control" type="number" placeholder="رقم التليفون" required>
+            </div> <!-- end form-group -->
 
 
 
@@ -75,28 +78,24 @@
                           </span>
             </div> <!-- end form-group -->
 
-            <div class="form-group">
-                <input name="job" class="form-control" type="text" placeholder="الوظيفة" required>
-            </div>
-
             {{--<div class="form-group">--}}
-                            {{--<span class="dropdown-el ">--}}
-                                {{--<input type="radio" name="sortType3" value="emp0" checked="checked" id="emp0">--}}
-                                {{--<label for="emp0">الوظيفة</label>--}}
-                                {{--<input type="radio" name="sortType3" value="emp1" id="emp1">--}}
-                                {{--<label for="emp1">وظيفة 1</label>--}}
-                                {{--<input type="radio" name="sortType3" value="emp2" id="emp2">--}}
-                                {{--<label for="emp2">وظيفة 2</label>--}}
-                                {{--<input type="radio" name="sortType3" value="emp3" id="emp3">--}}
-                                {{--<label for="emp3">وظيفة 3</label>--}}
-                                {{--<input type="radio" name="sortType3" value="emp4" id="emp4">--}}
-                                {{--<label for="emp4">وظيفة 4</label>--}}
-                                {{--<input type="radio" name="sortType3" value="emp5" id="emp5">--}}
-                                {{--<label for="emp5">وظيفة 5</label>--}}
-                                {{--<input type="radio" name="sortType3" value="emp6" id="emp6">--}}
-                                {{--<label for="emp6">غير ذلك</label>--}}
-                          {{--</span>--}}
-            {{--</div> <!-- end form-group -->--}}
+                {{--<input name="job" class="form-control" type="text" placeholder="الوظيفة" required>--}}
+            {{--</div>--}}
+
+            <div class="form-group">
+                            <span class="dropdown-el ">
+                                <input type="radio" name="job" checked="checked" id="emp0">
+                                <label for="emp0">الوظيفة</label>
+                                <input type="radio" name="job" value="يعمل" id="emp1">
+                                <label for="emp1">يعمل</label>
+                                <input type="radio" name="job" value="لا يعمل" id="emp2">
+                                <label for="emp2">لا يعمل</label>
+                                <input type="radio" name="job" value="يريد الحصول على وظيفة" id="emp3">
+                                <label for="emp3">يريد الحصول على وظيفة</label>
+
+                          </span>
+            </div> <!-- end form-group -->
+
 
             <div class="text-center">
                 <button class="custom-btn">

@@ -122,15 +122,30 @@ nav .sponsor .sponsors-logo img{
 
 }
 .add-job a:hover{
-    
+/*    background-color: #00487C;*/
+/*    color: #FFF;*/
     box-shadow: 0 15px 20px 0 rgba(0,0,0,0)
 }
+.add-job a:hover img:first-child{
+    transform: translateY(-100%)
+}
+.add-job a:hover img:last-child{
+    transform: translateY(-100%)
+}
 .add-job a img{
-    margin-left: 1.5rem
+    margin-left: 1.5rem;
+    transition:all .3s cubic-bezier(.53,-.01,0,1.49);; 
+}
+.add-job .job-container {
+    height: 27px;
+    overflow: hidden;
+}
+.add-job a img:first-child{
+    filter: grayscale(100%);
 }
 .home{
     min-height: calc(100vh - 78px);
-    height: 700px;
+    height: auto;
     background: linear-gradient(90deg,rgba(0, 78, 255, 0.75),rgba(43, 255, 172, 0.75)),url(../images/bg.png);
     background-size: cover;
     background-position: bottom;
@@ -220,19 +235,15 @@ nav .sponsor .sponsors-logo img{
 /* forms
 ========================= */
 .forms{
-    background-color: #EEF2F7;
-    background-image: url(../images/bg-forms.png);
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+    background:linear-gradient(41deg,rgba(0, 78, 255, 0.75) 49% ,rgba(43, 255, 172, 0.75));
+    
     min-height: calc(100vh - 78px);
     padding-top: 5rem
 }
 
 .forms h2{
     text-align: center;
-    color: #00487C;
+    color: #fff;
     font-weight: bold;
     font-size: 4.5rem;
     padding-bottom: 4rem;
@@ -438,6 +449,7 @@ select.form-control:not([size]):not([multiple]){
     color: #00487C
 }
 
-.custom-control .custom-control-input:checked{
-    border-color: #00487C
+.custom-control.active{
+    border-color: #00487C;
+   
 }

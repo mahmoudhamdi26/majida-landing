@@ -2,6 +2,14 @@
 /*eslint-env browser*/
 $(document).ready(function () {
     'use strict';
+    $('.custom-control .custom-control-label').click(function (){
+       $(this).parent().toggleClass('active'); 
+    });
+    $('.custom-radio .custom-control-label').click(function (){
+        $('.custom-radio').removeClass('active');
+       $(this).parent().toggleClass('active'); 
+      
+    });
     $('.addjob').click(function (){
         swal({
             title: "تم إضافة الوظيفة بنجاح",
