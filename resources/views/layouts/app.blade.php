@@ -47,7 +47,7 @@
             </div> <!-- end brand -->
             <div class="sponsor">
                 <div class="sponsor-by">
-                    <p>ممول من</p>
+                    <p>بالشراكة مع</p>
                 </div> <!-- end sponsor-by -->
                 <div class="sponsors-logo">
                     <a href="#">
